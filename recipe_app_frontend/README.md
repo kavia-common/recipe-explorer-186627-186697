@@ -1,40 +1,49 @@
-# Welcome to Remix!
+# Ocean Recipes — Remix Frontend
+
+A responsive recipe explorer built with Remix. Browse, search, and view recipe details. This app uses mock data so it runs without any backend.
 
 - 📖 [Remix docs](https://remix.run/docs)
 
-## Development
+## Quick Start
 
-Run the dev server:
+Install dependencies and run the dev server (port 3000):
 
-```shellscript
+```bash
+npm install
 npm run dev
 ```
 
-## Deployment
+Open http://localhost:3000
 
-First, build your app for production:
+- Home page: search input with debounced filtering and a responsive grid of recipe cards
+- Click a card to view details at `/recipes/:id`
 
-```sh
+## Environment Variables
+
+This frontend respects the following env variables for future integration (not required for local mock mode):
+
+- VITE_API_BASE: Base URL for future API calls
+- VITE_BACKEND_URL: Alternative backend origin
+- VITE_FRONTEND_URL, VITE_WS_URL, VITE_NODE_ENV, VITE_ENABLE_SOURCE_MAPS, VITE_PORT, VITE_TRUST_PROXY, VITE_LOG_LEVEL, VITE_HEALTHCHECK_PATH, VITE_FEATURE_FLAGS, VITE_EXPERIMENTS_ENABLED
+
+No credentials are required. If set, these variables can be read using `import.meta.env.VITE_*` in loaders/actions or client code.
+
+## Production
+
+Build and start:
+
+```bash
 npm run build
-```
-
-Then run the app in production mode:
-
-```sh
 npm start
 ```
 
-Now you'll need to pick a host to deploy it to.
-
-### DIY
-
-If you're familiar with deploying Node applications, the built-in Remix app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
+Artifacts:
 - `build/server`
 - `build/client`
 
 ## Styling
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+The app follows the “Ocean Professional” theme using Tailwind and a small custom stylesheet at `app/styles/theme.css`:
+- Primary #2563EB, Secondary/Success #F59E0B, Error #EF4444
+- Background #f9fafb, Surface #ffffff, Text #111827
+- Subtle gradients, rounded corners, smooth transitions
